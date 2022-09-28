@@ -31,6 +31,7 @@ def index():
             db.session.commit()
         thisymbol.ceiling=request.form['ceiling']
         thisymbol.floor=request.form['floor']
+        thisymbol.notes=request.form['notes']
         db.session.commit()
     elif requestedsymbol:
         thisymbol=Symbol.query.filter_by(symbolcode=requestedsymbol).one()
